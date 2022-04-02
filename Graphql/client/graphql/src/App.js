@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 // import ApolloClient from 'apollo-boost';
 // import { ApolloProvider } from  'react-apollo';
 
@@ -7,31 +7,29 @@ import {
   InMemoryCache,
   ApolloProvider,
   useQuery,
-  gql
+  gql,
 } from "@apollo/client";
 
-import LessonList from './components/LessonList';
-import TeacherList from './components/TeacherList';
-import AddLesson from './components/AddLesson';
-import AddTeacher from './components/AddTeacher';
-
-import './App.css';
+import LessonList from "./components/LessonList";
+import TeacherList from "./components/TeacherList";
+import AddLesson from "./components/AddLesson";
+import AddTeacher from "./components/AddTeacher";
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/graphql/',
-  cache: new InMemoryCache()
+  uri: "http://localhost:4000/graphql/",
+  cache: new InMemoryCache(),
 });
 
 function App() {
   return (
-      <ApolloProvider client={client}>
-          <div className="App">
-            <LessonList />
-            <TeacherList />
-            <AddLesson />
-            <AddTeacher />
-          </div>
-      </ApolloProvider>
+    <ApolloProvider client={client}>
+      <div className="App">
+        <LessonList />
+        <TeacherList />
+        <AddLesson />
+        <AddTeacher />
+      </div>
+    </ApolloProvider>
   );
 }
 
